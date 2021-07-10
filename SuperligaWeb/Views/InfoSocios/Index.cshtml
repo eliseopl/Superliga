@@ -1,0 +1,54 @@
+﻿@model InfoSociosViewModel
+@{
+    ViewData["Title"] = "InfoSocios";
+    Layout = "_LayoutInfoSocios";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/lib/dataTables/datatables.min.css" />
+</head>
+
+<div class="content" id="mainContent">
+    <div class="row mt-lg-5 ml-lg-5 justify-content-center">
+        <div class="col-lg-auto">
+            @*Cantidad de Registros*@
+            <div class="row justify-content-center">
+                <div class="card text-white text-center bg-secondary">
+                    <div class="card-header">
+                        @Html.DisplayNameFor(model => model.CantPersonasRegistradas)
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-white">@Model.CantPersonasRegistradas</h5>
+                    </div>
+                </div>
+            </div>
+            @*Promedio Hinchas de Racing*@
+            <div class="row" style="margin-top:73.6px;">
+                <div class="card text-white text-center bg-primary">
+                    <div class="card-header">
+                        @Html.DisplayNameFor(model => model.PromedioEdadHinchasDeRacing)
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">@Model.PromedioEdadHinchasDeRacing</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-auto ml-5">
+            @*Nombres Comunes Hinchas De River*@
+            <div class="card text-white text-center bg-danger">
+                <div class="card-header">
+                    @Html.DisplayNameFor(model => model.NombresComunesHinchasDeRiver)
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        @foreach (var nombre in Model.NombresComunesHinchasDeRiver)
+                        {
+                            <li class="list-group-item bg-danger">@nombre</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

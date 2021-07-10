@@ -1,0 +1,71 @@
+﻿#tableEquipos_filter {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 4px;
+    text-align: center;
+    font-size: small;
+}
+
+    #tableEquipos_filter .form-control {
+        background-repeat: no-repeat;
+        background-position: 0% 50% !important;
+        color: black;
+        height: 37px !important;
+    }
+
+#tableEquipos_wrapper > div:nth-child(1) {
+    background-color: #343a40;
+    color: #fff;
+    font-size: small;
+}
+
+#tableEquipos_wrapper > div:nth-child(3) {
+    border-top-style: solid;
+    border-top-width: thin;
+}
+
+    #tableEquipos_wrapper > div:nth-child(3) > div.col-sm-12.col-md-7 {
+        padding-top: 4px;
+    }
+
+#tableEquipos_length {
+    align-content: center;
+    padding-left: inherit;
+    padding-top: 4px;
+}
+
+    #tableEquipos_length .form-control {
+        height: 37px !important;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
+        background-position-x: 2.3rem;
+        background-position-y: center;
+        background-size: 8px 10px;
+        background-attachment: initial;
+        background-origin: initial;
+        background-repeat: no-repeat;
+        background-clip: initial;
+        background-color: #fff;
+    }
+
+#tableEquipos_info .dataTables_info {
+    background-color: #343a40;
+    color: #fff;
+}
+
+#tableEquipos_paginate > ul > li > a {
+    color: #343a40;
+    border-color: black;
+}
+
+#tableEquipos_paginate > ul > li.active > a {
+    background-color: #343a40;
+    color: #fff;
+    border-color: black;
+}
+
+.btnOrderHinchas span {
+    font-size: small;
+}
+
+asd {
+}

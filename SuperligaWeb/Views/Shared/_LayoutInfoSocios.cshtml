@@ -1,0 +1,63 @@
+﻿@using static SuperligaWeb.Helpers.SideBarHelper
+
+@{
+    Layout = "_Layout";
+}
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/style.css">
+    <link rel="stylesheet" href="~/lib/dataTables/DataTables-1.10.25/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/lib/dataTables/Buttons-1.7.1/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/lib/dataTables/FixedColumns-3.3.3/css/fixedColumns.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/lib/dataTables/Select-1.3.3/css/select.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/lib/dataTables/SearchBuilder-1.1.0/css/searchBuilder.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/lib/dataTables/Scroller-2.0.4/css/scroller.bootstrap4.min.css">
+    @RenderSection("Styles", required: false)
+</head>
+
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        @*SideBar*@
+        <nav id="sidebar">
+            <div id="imgSideBar" class="img bg-wrap text-center py-4">
+                <div class="user-logo">
+                    <div id="imgUserLogo" class="img"></div>
+                    <h3>Diego Maradona</h3>
+                </div>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="@Html.IsSelected(actions: "Index", controllers: "InfoSocios")">
+                    <a asp-action="Index" asp-controller="InfoSocios"><span class="fa fa-home mr-3"></span> Resumen</a>
+                </li>
+                <li class="@Html.IsSelected(actions: "SociosCasadosUniversitarios", controllers: "InfoSocios")">
+                    <a asp-action="SociosCasadosUniversitarios" asp-controller="InfoSocios"><span class="fa fa-list mr-3" style="text-align:justify"></span> Socios casados y universitarios</a>
+                </li>
+                <li class="@Html.IsSelected(actions: "InfoEquipos", controllers: "InfoSocios")">
+                    <a asp-action="InfoEquipos" asp-controller="InfoSocios"><span class="fa fa-shield mr-3"></span> Edad por Equipos</a>
+                </li>
+                <li class="@Html.IsSelected(actions: "Index", controllers: "Home")">
+                    <a asp-action="Index" asp-controller="Home"><span class="fa fa-sign-out mr-3"></span> Volver</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content" class="mt-5 mb-5" style="margin-left: 9.65rem;">
+            @RenderBody()
+        </div>
+    </div>
+
+
+    @*  Datatables  *@
+    <script type="text/javascript" src="~/lib/dataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="~/lib/dataTables/DataTables-1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/lib/dataTables/DataTables-1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="~/lib/dataTables/Buttons-1.7.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="~/lib/dataTables/Buttons-1.7.1/js/buttons.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="~/lib/dataTables/FixedColumns-3.3.3/js/dataTables.fixedColumns.min.js"></script>
+    @*<script src="~/lib/dataTables/KeyTable-2.6.1/js/dataTables.keyTable.min.js"></script>*@
+    <script type="text/javascript" src="~/lib/dataTables/Scroller-2.0.4/js/dataTables.scroller.min.js"></script>
+    <script type="text/javascript" src="~/js/languageOptions.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>

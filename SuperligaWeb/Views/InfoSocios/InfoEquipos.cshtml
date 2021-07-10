@@ -1,0 +1,59 @@
+﻿@model List<InfoEquiposViewModel>
+@{ InfoEquiposViewModel infoEquipos = null; }
+
+@section Styles {
+    <link href="@Url.Content("~/css/infoEquipos.css")" rel="stylesheet" />
+}
+
+@{
+    ViewData["Title"] = "InfoEquipos";
+    Layout = "_LayoutInfoSocios";
+}
+
+<div class="content" id="mainContent">
+    <div class="row justify-content-center">
+        <div class="card">
+            @*Card header*@
+            <div class="card-header header-elements-inline">
+                <h5 class="card-title mb-0 font-weight-semibold">Edad de socios por Equipos</h5>
+                <div class="header-elements">
+                    <div class="list-icons">
+                        <a class="list-icons-item" data-action="reload"></a>
+                    </div>
+                </div>
+            </div>
+
+            @*Card body*@
+            <div class="card-body" style="background-color: #343a40;">
+                <table id="tableEquipos" class="table table-dark table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th hidden></th>
+                            <th>@Html.DisplayNameFor(model => infoEquipos.Nombre)</th>
+                            <th>@Html.DisplayNameFor(model => infoEquipos.PromedioEdad)</th>
+                            <th>@Html.DisplayNameFor(model => infoEquipos.MenorEdadRegistrada)</th>
+                            <th>@Html.DisplayNameFor(model => infoEquipos.MayorEdadRegistrada)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var equipo in Model)
+                        {
+                            <tr>
+                                <td hidden>@equipo.CantidadHinchas</td>
+                                <td>@equipo.Nombre</td>
+                                <td>@equipo.PromedioEdad</td>
+                                <td>@equipo.MenorEdadRegistrada</td>
+                                <td>@equipo.MayorEdadRegistrada</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @* View *@
+    <script type="text/javascript" src="~/js/InfoSocios/InfoEquipos.js" asp-append-version="true"></script>
+}

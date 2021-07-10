@@ -1,0 +1,55 @@
+﻿@model List<SocioCasadoUniversitarioViewModel>
+@{ SocioCasadoUniversitarioViewModel scuViewModel = null; }
+
+@section Styles {
+    <link href="@Url.Content("~/css/SCU.css")" rel="stylesheet"/>
+}
+
+@{
+    ViewData["Title"] = "SociosCasadosUniversitarios";
+    Layout = "_LayoutInfoSocios";
+}
+
+<div class="content" id="mainContent">
+    <div class="row justify-content-center">
+        <div class="card">
+            @*Card header*@
+            <div class="card-header header-elements-inline">
+                <h5 class="card-title mb-0 font-weight-semibold">Socios casados con estudios universitarios</h5>
+                <div class="header-elements">
+                    <div class="list-icons">
+                        <a class="list-icons-item" data-action="reload"></a>
+                    </div>
+                </div>
+            </div>
+
+            @*Card body*@
+            <div class="card-body" style="background-color: #343a40;">
+                <table id="tableSCU" class="table table-dark table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => scuViewModel.Nombre)</th>
+                            <th>@Html.DisplayNameFor(model => scuViewModel.Edad)</th>
+                            <th>@Html.DisplayNameFor(model => scuViewModel.Equipo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var scu in Model)
+                        {
+                            <tr>
+                                <td>@scu.Nombre</td>
+                                <td>@scu.Edad</td>
+                                <td>@scu.Equipo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @* View *@
+    <script type="text/javascript" src="~/js/InfoSocios/SCU.js" asp-append-version="true"></script>
+}
